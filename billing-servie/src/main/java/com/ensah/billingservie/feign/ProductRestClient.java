@@ -14,5 +14,5 @@ public interface ProductRestClient {
 	 PagedModel<Product> findPageOfProducts(@RequestParam(name = "page") int page,
 												  @RequestParam(name = "size") int size);
 	@GetMapping("/products/{id}")
-	Product getProductById(@PathVariable("id") int productId) ;
+	Product getProductById(@PathVariable("id") Long productId) ;
 }

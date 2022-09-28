@@ -1,6 +1,7 @@
 package com.ensah.billingservie.bo;
 
 import com.ensah.billingservie.models.Product;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class ProductItem {
 
 	private  Long productId ;
 
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	@ManyToOne
 	private Bill bill ;
 

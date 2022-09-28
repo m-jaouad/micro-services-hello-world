@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
 import java.util.List;
 
@@ -30,5 +32,13 @@ public class InventoryServiceApplication implements CommandLineRunner {
 			System.out.println(product.getName() + product.getQuantity() ) ;
 		}
 
+	}
+
+
+	@Bean
+	CommandLineRunner configuration(RepositoryRestConfiguration repositoryRestConfiguration){
+		repositoryRestConfiguration.exposeIdsFor(Product.class);
+
+		return args -> {} ;
 	}
 }
